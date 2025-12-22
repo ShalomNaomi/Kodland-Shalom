@@ -1,0 +1,93 @@
+import discord
+import random
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Hi! I am a bot {bot.user}!')
+    await ctx.send(f'Pilih satu yang ingin kamu ketahui!')
+    await ctx.send(f'(satu) cara memilah sampah didalamm rumah ')
+    await ctx.send(f'(dua) cara memilah sampah diluar rumah')
+
+@bot.command()
+async def satu(ctx):
+    await ctx.send(f'sebelum masuk lebih jauh, pastikan kamu tau apa itu sampah organik dan anorganik!')
+    with open(f'images\materi1.jpg', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+    await ctx.send(f'Sampah organik adalah sampah dari makhluk hidup yang mudah terurai alami (sisa makanan, daun kering), sementara sampah anorganik berasal dari benda mati buatan manusia dan sulit terurai (plastik, kaca, logam). ')
+    with open(f'images\org mikir (1).jpg', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+    await ctx.send(f'kenapa penting untuk mengetahui sampah organik dan anorganik?')
+    await ctx.send(f'Penting mengetahui sampah organik dan anorganik karena memudahkan pengelolaan, daur ulang, dan pengomposan; mengurangi pencemaran lingkungan (udara, air, tanah); mencegah penyakit dari penumpukan sampah; serta mengubah sampah menjadi produk bernilai seperti kompos atau kerajinan, yang mendukung ekonomi dan kebersihan lingkungan secara menyeluruh. ')
+    await ctx.send(f'Nah, sekarang kita masuk ke cara memilahnya')
+    await ctx.send(f'mau tau cara memilahnya? (type : yessatu/nosatu')
+    with open(f'images\yes no.jpg', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+
+@bot.command()
+async def yessatu(ctx):
+    await ctx.send(f'Berikut cara memilah sampah di dalam rumah:')
+    await ctx.send(f'1. Siapkan wadah terpisah untuk sampah organik dan anorganik di area strategis rumah Anda, seperti dapur atau ruang sampah.')
+    await ctx.send(f'2. Beri label pada setiap wadah untuk memudahkan identifikasi jenis sampah yang akan dibuang.')
+    await ctx.send(f'3. Ajarkan seluruh anggota keluarga tentang pentingnya memilah sampah dan cara melakukannya dengan benar.')
+    await ctx.send(f'4. Gunakan kantong sampah yang berbeda untuk setiap jenis sampah agar tidak tercampur.')
+    await ctx.send(f'5. Segera buang sampah organik ke tempat pengolahan kompos atau tempat pengumpulan sampah organik setempat untuk menghindari bau dan hama.')
+    await ctx.send(f'6. Bawa sampah anorganik ke pusat daur ulang atau tempat pengumpulan sampah anorganik secara rutin.')
+    await ctx.send(f'7. Pantau dan evaluasi kebiasaan memilah sampah di rumah secara berkala untuk memastikan konsistensi dan efektivitasnya.')
+    await ctx.send(f'Selamat mencoba! Dengan memilah sampah di rumah, kita turut berkontribusi pada pelestarian lingkungan.')
+    await ctx.send(f'lanjut ke opsi dua? (type : dua)')
+
+@bot.command()
+async def nosatu(ctx):
+    await ctx.send(f'Pilih satu yang ingin kamu ketahui!')
+    await ctx.send(f'(satu) cara memilah sampah didalamm rumah ')
+    await ctx.send(f'(dua) cara memilah sampah diluar rumah')
+
+@bot.command()
+async def dua(ctx):
+    await ctx.send(f'sebelum masuk lebih jauh, pastikan kamu tau apa itu sampah organik dan anorganik!')
+    with open(f'images\materi1.jpg', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+    await ctx.send(f'Sampah organik adalah sampah dari makhluk hidup yang mudah terurai alami (sisa makanan, daun kering), sementara sampah anorganik berasal dari benda mati buatan manusia dan sulit terurai (plastik, kaca, logam). ')
+    with open(f'images\org mikir (1).jpg', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+    await ctx.send(f'kenapa penting untuk mengetahui sampah organik dan anorganik?')
+    await ctx.send(f'Penting mengetahui sampah organik dan anorganik karena memudahkan pengelolaan, daur ulang, dan pengomposan; mengurangi pencemaran lingkungan (udara, air, tanah); mencegah penyakit dari penumpukan sampah; serta mengubah sampah menjadi produk bernilai seperti kompos atau kerajinan, yang mendukung ekonomi dan kebersihan lingkungan secara menyeluruh. ')
+    await ctx.send(f'Nah, sekarang kita masuk ke cara memilahnya')
+    await ctx.send(f'mau tau cara memilahnya? (type : yesdua/nodua)')
+    with open(f'images\yes no.jpg', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+
+@bot.command()
+async def yesdua(ctx):
+    await ctx.send(f'Berikut cara memilah sampah di luar rumah:')
+    await ctx.send(f'1. Gunakan tempat sampah yang tersedia di area umum dan pastikan tempat tersebut terpisah antara sampah organik dan anorganik.')
+    await ctx.send(f'2. Jangan membuang sampah sembarangan, tetap gunakan tempat sampah yang telah disediakan.')
+    await ctx.send(f'3. Bawa sampah anorganik ke tempat daur ulang atau pusat pengumpulan sampah anorganik jika tersedia.')
+    await ctx.send(f'4. Segera buang sampah organik ke tempat pengolahan kompos atau tempat pengumpulan sampah organik setempat untuk menghindari bau dan hama.')
+    await ctx.send(f'5. Pantau dan evaluasi kebiasaan memilah sampah di luar rumah secara berkala untuk memastikan konsistensi dan efektivitasnya.')
+    await ctx.send(f'Selamat mencoba! Dengan memilah sampah di luar rumah, kita turut berkontribusi pada pelestarian lingkungan.')
+    await ctx.send(f'lanjut ke opsi satu? (type : satu)')
+
+@bot.command()
+async def nodua(ctx):
+    await ctx.send(f'Pilih satu yang ingin kamu ketahui!')
+    await ctx.send(f'(satu) cara memilah sampah didalamm rumah ')
+    await ctx.send(f'(dua) cara memilah sampah diluar rumah')
+
+bot.run("TOKEN")
