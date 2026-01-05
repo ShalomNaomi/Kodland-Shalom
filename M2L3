@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ini adalah bagaimana tab akan diberi nama di browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ini tajuk yang besar!</h1>
+    <p>Ini hanya satu paragraf teks</p>
+    <h2>Dan ini adalah tajuk yang sedikit lebih kecil</h2>
+             <ul>
+                   <li>Ini adalah elemen dari bullet list (yang pertama)</li>
+                   <li>Dan ini adalah elemen kedua</li>
+             </ul>
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQThLoP7llGWR-pZW3smUWvDub00EGPaZRRig&s" alt="Gambar 1">
+</body>
+</html>
+
+
+
+body {
+    font-family: monospace,  sans-serif; /* keluarga font */
+    font-size: 11px; /* Ukuran font utama pada tag <p></p> */
+    background-color: #e25151; /* Warna latar belakang laman web */
+    color: #ffffff; /* Warna teks */ 
+}
+h1 {
+    color: #0a711f; /* Warna tajuk (header)*/
+    font-size: 44px; /* Ukuran font tajuk (header) */
+    font-family: 'Times New Roman', Times, serif; /* Keluarga font yang digunakan di tajuk (header) */
+}
