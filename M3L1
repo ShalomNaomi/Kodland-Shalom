@@ -1,0 +1,28 @@
+from flask import Flask
+import random
+
+facts_list = ["Studi tentang ketergantungan teknologi adalah salah satu bidang penelitian ilmiah modern yang paling relevan","Jejaring sosial memiliki sisi positif dan negatif, dan kita harus menyadari keduanya saat menggunakan platform ini"]
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return '<h1>Welcome to my page</h1><a href="/random_fact">View a random fact!</a><h2>Tekateki</h2><a href="/Teka_teki">klik untuk bermain teka teki</a>'
+
+@app.route("/random_fact")
+def get_facts():
+    return f'<p>{random.choice(facts_list)}</p>'
+
+@app.route("/Teka_teki")
+def soal():
+    return '<h1>Soal Teka-teki</h1><p>Apakah kamu bisa menebak jawabannya?</p><h2>Apa yang selalu naik tapi tidak pernah turun?</h2><a href="/jawab1">jawabannya</a><h3>Apa yang punya kunci tapi tidak bisa membuka pintu?</h3><a href="/jawab2">jawabannya</a>'
+
+@app.route("/jawab1")
+def jawab():
+    return '<h1>Jawaban Teka-teki</h1><p>Umur</p>'
+
+@app.route("/jawab2")
+def jawab2():
+    return '<h1>Jawaban Teka-teki</h1><p>Piano</p>'             
+
+app.run(debug=True)
